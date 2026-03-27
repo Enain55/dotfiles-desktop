@@ -1,0 +1,160 @@
+/* === Global Settings ===================================================== */
+* {
+    border: none;
+    border-radius: 4px;
+    min-height: 0;
+    font-family: "GohuFont Nerd Font", "GohuFont uni-11", monospace;
+    font-size: 13px;
+}
+
+#waybar {
+    background-color: #282c34;
+    transition-property: background-color;
+    transition-duration: 0.5s;
+    color: #9cdef2;
+}
+
+window#waybar {
+    border: 3px solid #61afef;
+    border-left: 3px solid #56b6c2;
+    border-right: 3px solid #56b6c2;
+}
+
+/* === Window (Reactor) Logic ============================================== */
+
+window#waybar.empty #window {
+    color: #56b6c2;
+    border: 2px solid #56b6c2;
+    background-color: rgba(86, 182, 194, 0.1);
+    animation: blinker-blue 4s linear infinite;
+}
+
+#window {
+    padding: 6px 12px;
+    margin: 6px 6px;
+    background-color: rgba(224, 108, 117, 0.1);
+    border: 2px solid #e06c75;
+    border-radius: 2px;
+    color: #e06c75;
+    animation: blinker-red 2.5s linear infinite;
+}
+#window:hover {
+    background-color: #4c566a;
+    border: 2px solid #ffffff;
+    color: #ffffff;
+    animation: none;
+    transition: all 0.2s ease-in-out;
+}
+
+/* === Animations ========================================================== */
+
+@keyframes blinker-blue {
+    50% { opacity: 0.6; box-shadow: 0 0 10px #56b6c2; }
+}
+
+@keyframes blinker-red {
+    50% { opacity: 0.6; box-shadow: 0 0 12px #e06c75; }
+}
+
+/* === Workspaces ========================================================== */
+#workspaces {
+    background-color: transparent;
+    padding-left: 10px;
+}
+
+#workspaces button {
+    all: initial;
+    min-width: 0;
+    padding: 6px 10px;
+    margin: 6px 3px;
+    border-radius: 4px;
+    background-color: #2e3440;
+    color: #56b6c2;
+}
+
+#workspaces button.active {
+    color: #282c34;
+    background-color: #61afef;
+}
+
+#workspaces button:hover {
+    color: #2e3440;
+    background-color: #56b6c2;
+}
+
+/* === Default Module Container Styling ==================================== */
+#custom-microphone, #bluetooth, #custom-bluetooth, #custom-brightness, 
+#custom-volume, #custom-battery, #custom-power, #custom-vpn, 
+#network, #battery, #pulseaudio, #backlight, #clock, #keyboard-state, #tray {
+    padding: 6px 12px;
+    margin: 6px 6px;
+    background-color: #292d35;
+    border: 2px solid #61afef;
+    border-radius: 2px;
+}
+
+/* === Specific Module Colors ============================================== */
+
+#pulseaudio.muted {
+    background-color: #f38ba8;
+    color: #1e1e2e;
+}
+
+#bluetooth.disabled {
+    color: #fab387;
+}
+
+#network.disconnected {
+    background-color: #e06c75;
+    color: #1e1e2e;
+}
+
+#clock {
+    font-weight: bold;
+    color: #fab387;
+}
+
+#custom-asus-profile {
+    font-weight: bold;
+    color: #e5c07b;
+}
+
+/* === Battery States ====================================================== */
+#battery.critical { background-color: #bf616a; color: white; }
+#battery.warning { background-color: #fab387; color: #2e3440; }
+
+.battery-critical { background-color: #bf616a; color: white; padding: 2px 6px; font-weight: bold; }
+.battery-warning { background-color: #fab387; color: #2e3440; padding: 2px 6px; }
+
+/* === Tray ================================================================ */
+#tray {
+    padding: 4px 8px;
+    background-color: #1e1e2e;
+}
+
+/* === Hover Effects for Modules =========================================== */
+#custom-microphone:hover, #custom-volume:hover, #pulseaudio:hover, 
+#network:hover, #bluetooth:hover, #custom-power:hover, 
+#custom-battery:hover, #battery:hover, #backlight:hover, #clock:hover, #custom-vpn:hover, #tray:hover {
+    background-color: #4c566a;
+    border: 2px solid #56b6c2;
+    color: #56b6c2;
+    transition: all 0.2s ease-in-out;
+}
+
+/* === Tray Icon Spacing =================================================== */
+#tray > * {
+    margin: 0 6px;   /* increase horizontal spacing between icons */
+}
+
+/* === Tooltips ============================================================ */
+tooltip {
+    color: #56b6c2;
+    background-color: #3b4252;
+    border: 1px solid #56b6c2;
+    font-weight: bold;
+}
+
+tooltip label {
+    color: #78bec7;
+}

@@ -1,0 +1,64 @@
+/* Global defaults */
+* {
+  font: "JetBrainsMono Nerd Font Mono 11";
+  blur: true;
+  background-color: transparent;
+  border-radius: 0px;
+}
+
+/* ── Window ──────────────────────────────── */
+window {
+  width: 600px;
+  height: 400px;
+  location: center;
+  border: 2px;
+  border-radius: 6px;
+  border-color: #61afef;
+  background-color: rgba(30, 30, 30, 0.85);
+  padding: 0px;
+}
+
+/* ── Layout ──────────────────────────────── */
+mainbox {
+  orientation: vertical;
+  children: [ "entry", "listview" ];
+  spacing: 0px;
+  padding: 0px;
+}
+
+/* ── Input ──────────────────────────────── */
+entry {
+  padding: 4px 8px;
+  margin: 0px;
+  min-height: 28px;
+  expand: false;
+
+  font: "JetBrainsMono Nerd Font Mono 11";
+  text-color: #fab387;
+  background-color: #292e36;
+
+  border-radius: 6px 6px 0px 0px;
+}
+
+/* ── Listview ───────────────────────────── */
+listview {
+  lines: 8;
+  background-color: rgba(46, 52, 64, 0.9);
+  border-radius: 0px 0px 6px 6px;
+  padding: 6px;
+}
+
+/* ── Elements ───────────────────────────── */
+element {
+  border-radius: 4px;
+}
+
+element-text {
+  padding: 8px 10px;
+  text-color: #fab387;
+}
+
+element selected {
+  background-color: #191919;
+  text-color: #e5c07b;
+}
